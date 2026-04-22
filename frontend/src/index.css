@@ -1,0 +1,72 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffc0cb;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Floating animals */
+body::before {
+  content: "🐶 🐾 🐱 🐾 🐶 🐾 🐱 🐾";
+  position: fixed;
+  top: 10%;
+  left: 0;
+  font-size: 40px;
+  opacity: 0.3;
+  animation: floatLeftRight 20s linear infinite;
+}
+
+body::after {
+  content: "🐾 🐶 🐾 🐱 🐾 🐶 🐾";
+  position: fixed;
+  bottom: 10%;
+  right: 0;
+  font-size: 35px;
+  opacity: 0.3;
+  animation: floatRightLeft 25s linear infinite;
+}
+
+/* Animations */
+@keyframes floatLeftRight {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100vw); }
+}
+
+@keyframes floatRightLeft {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100vw); }
+}
+
+
+h1 {
+  color: #333;
+}
+
+button {
+  padding: 10px 18px;
+  margin: 8px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+input, select {
+  padding: 8px;
+  margin: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
+div {
+  margin-top: 20px;
+}
