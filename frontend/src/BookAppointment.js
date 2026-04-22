@@ -8,7 +8,7 @@ function BookAppointment() {
   const [date, setDate] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/services")
+    fetch("https://pawfectcare-oojj.onrender.com/api/services")
       .then(res => res.json())
       .then(data => setServices(data));
 

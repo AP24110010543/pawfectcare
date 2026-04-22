@@ -6,23 +6,36 @@ function Register() {
   const [password, setPassword] = useState("");
 
   const handleRegister = async () => {
-    const res = await fetch("http://localhost:5000/api/auth/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        password,
-        role: "owner"
-      })
-    });
+    try {
+      const res = await fetch(
+        "https://pawfectcare-oojj.onrender.com/api/auth/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            password,
+            role: "owner",
+          }),
+        }
+      );
 
-    const data = await res.json();
-    console.log(data);
+      const data = await res.json();
+      console.log(data);
 
-    alert("Registered successfully");
+      if (res.ok) {
+        alert("Registered successfully 🎉");
+      } else {
+        alert(data.message || "Registration failed");
+      }
+
+    } catch (error) {
+      console.error(error);
+      alert("Server error ❌");
+    }
   };
 
   return (
