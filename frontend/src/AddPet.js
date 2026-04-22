@@ -9,7 +9,7 @@ function AddPet() {
   const handleAddPet = async () => {
     const user = JSON.parse(localStorage.getItem("user"));
 
-    const res = await fetch("http://localhost:5000/api/pets/add", {
+    const res = await fetch("https://pawfectcare-oojj.onrender.com/api/pets", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

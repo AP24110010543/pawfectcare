@@ -4,7 +4,7 @@ function ViewAppointments() {
   const [appointments, setAppointments] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/appointments")
+    fetch("https://pawfectcare-oojj.onrender.com/api/appointments")
       .then(res => res.json())
       .then(data => setAppointments(data));
   }, []);
