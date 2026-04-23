@@ -8,7 +8,13 @@ function AddPet() {
 
   const handleAddPet = async () => {
     try {
-      const user = JSON.parse(localStorage.getItem("user"));
+     const userData = localStorage.getItem("user");
+const user = userData ? JSON.parse(userData) : null;
+
+if (!user || !user._id) {
+  alert("Please login again ❌");
+  return;
+}
 
       if (!user) {
         alert("Please login first");
